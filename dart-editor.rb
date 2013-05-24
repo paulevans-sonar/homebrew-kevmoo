@@ -68,7 +68,7 @@ class DartEditor < Formula
 
   def caveats; <<-EOS.undent
     DartEditor.app was installed in:
-      #{prefix}
+      #{installed_prefix}
 
     To symlink into ~/Applications, you can do:
       brew linkapps
