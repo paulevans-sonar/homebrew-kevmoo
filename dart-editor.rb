@@ -59,6 +59,7 @@ class DartEditor < Formula
 
     items = Dir[prefix+'dart-sdk/bin/*']
     items.concat Dir[prefix+'chromium/DumpRenderTree.app/Contents/MacOS/DumpRenderTree']
+    items.concat Dir[prefix+'chromium/Content Shell.app/Contents/MacOS/Content Shell']
 
     items.each do |item|
       name = File.basename item
