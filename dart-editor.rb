@@ -58,7 +58,6 @@ class DartEditor < Formula
     prefix.install Dir['*']
 
     items = Dir[prefix+'dart-sdk/bin/*']
-    items.concat Dir[prefix+'chromium/DumpRenderTree.app/Contents/MacOS/DumpRenderTree']
     items.concat Dir[prefix+'chromium/Content Shell.app/Contents/MacOS/Content Shell']
 
     items.each do |item|
