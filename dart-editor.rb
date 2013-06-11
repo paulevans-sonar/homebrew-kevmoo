@@ -58,12 +58,15 @@ class DartEditor < Formula
     prefix.install Dir['*']
 
     items = Dir[prefix+'dart-sdk/bin/*']
-    items.concat Dir[prefix+'chromium/Content Shell.app/Contents/MacOS/Content Shell']
 
     items.each do |item|
       name = File.basename item
       (bin+name).write shim_script(item)
     end
+
+    item = Dir[prefix+'chromium/Content Shell.app/Contents/MacOS/Content Shell']
+    (bin+'content_shell').write shim_script(item)
+
   end
 
   def caveats; <<-EOS.undent
