@@ -49,7 +49,7 @@ class DartEditor < Formula
   def shim_script target
     <<-EOS.undent
       #!/bin/bash
-      export DART_SDK=#{prefix}dart-sdk
+      export DART_SDK=#{prefix}/dart-sdk
       exec "#{target}" "$@"
     EOS
   end
