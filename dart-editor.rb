@@ -38,9 +38,9 @@ class DartEditor < Formula
   sha1 '5a9aa54661b802ed1171d75782787d354f1c7a4a'
 
   devel do
-    url 'https://gsdview.appspot.com/dart-editor-archive-trunk/25719/darteditor-macos-64.zip'
-    version '25719'
-    sha1 '74a11a42028ac66a6f698535e24a0bcfff3d9f22'
+    url 'https://gsdview.appspot.com/dart-editor-archive-trunk/25747/darteditor-macos-64.zip'
+    version '25747'
+    sha1 'f0789e20bf6df8b96802b7e1cfe7f5ba5dfe0b94'
   end
 
   depends_on Requires64Bit
