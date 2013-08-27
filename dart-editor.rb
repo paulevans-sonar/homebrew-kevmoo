@@ -33,9 +33,9 @@ end
 
 class DartEditor < Formula
   homepage 'http://www.dartlang.org/'
-  url 'https://gsdview.appspot.com/dart-editor-archive-integration/26106/darteditor-macos-64.zip'
-  version '26106'
-  sha1 'ca133b6844b905bbb439a20ca45e026cd3f666f3'
+  url 'https://gsdview.appspot.com/dart-editor-archive-integration/26639/darteditor-macos-64.zip'
+  version '26639'
+  sha1 'd3527027a013c4fe6c129e9ec2f43f52fb107bce'
 
   devel do
     url 'https://gsdview.appspot.com/dart-editor-archive-trunk/26639/darteditor-macos-64.zip'
