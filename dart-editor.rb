@@ -57,7 +57,7 @@ class DartEditor < Formula
   def install
     prefix.install Dir['*']
 
-    items = Dir[prefix+'dart-sdk/bin/*']
+    items = Dir[prefix+'dart-sdk/bin/*'].select { |f| File.file? f }
 
     items.each do |item|
       name = File.basename item
