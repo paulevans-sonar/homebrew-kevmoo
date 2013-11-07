@@ -64,9 +64,6 @@ class DartEditor < Formula
       (bin+name).write shim_script(item)
     end
 
-    item = Dir[prefix+'chromium/Content Shell.app/Contents/MacOS/Content Shell']
-    (bin+'content_shell').write shim_script(item)
-
   end
 
   def caveats; <<-EOS.undent
