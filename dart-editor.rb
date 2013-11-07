@@ -32,15 +32,19 @@ class RequiresNoDart < Requirement
 end
 
 class DartEditor < Formula
+  VERSION = '30036'
+  BASE_URL = "https://gsdview.appspot.com/dart-archive/channels/stable/release/#{VERSION}/"
+
   homepage 'http://www.dartlang.org/'
-  url 'https://gsdview.appspot.com/dart-archive/channels/stable/release/30036/editor/darteditor-macos-x64.zip'
-  version '30036'
+  url "#{BASE_URL}editor/darteditor-macos-x64.zip"
+  version VERSION
   sha1 '323c5a51689322765c86715c453c4709485dee47'
 
-  devel do
-    url 'https://gsdview.appspot.com/dart-editor-archive-trunk/29892/darteditor-macos-64.zip'
-    version '29892'
-    sha1 '16c260585f7ec348a080eced900e7cc95f914d27'
+  option 'with-content-shell', 'Download and install content_shell -- headless Chromium for testing'
+
+  resource 'content_shell' do
+    url "#{BASE_URL}dartium/content_shell-macos-ia32-release.zip"
+    sha1 'a915a408ca76d1e74b5684b6f3f60feb331221e7'
   end
 
   depends_on Requires64Bit
@@ -62,6 +66,18 @@ class DartEditor < Formula
     items.each do |item|
       name = File.basename item
       (bin+name).write shim_script(item)
+    end
+
+    if build.with? 'content-shell'
+      content_shell_path = prefix+'chromium/content_shell'
+      (content_shell_path).install resource('content_shell')
+
+      puts content_shell_path
+
+      item = Dir["#{content_shell_path}/Content Shell.app/Contents/MacOS/Content Shell"]
+
+      (bin+'content_shell').write shim_script(item)
+
     end
 
   end
