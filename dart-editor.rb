@@ -32,20 +32,20 @@ class RequiresNoDart < Requirement
 end
 
 class DartEditor < Formula
-  VERSION = '30107'
+  VERSION = '30188'
   BASE_URL = "https://gsdview.appspot.com/dart-archive/channels/stable/release/#{VERSION}/"
 
   homepage 'http://www.dartlang.org/'
   url "#{BASE_URL}editor/darteditor-macos-x64.zip"
   version VERSION
-  sha1 '09bdb5cf27636092eb79bb824997e08460ad20e4'
+  sha1 'e6eb7099ea883d2d6790c006dcb575245cf89031'
 
   option 'with-content-shell', 'Download and install content_shell -- headless Chromium for testing'
 
   resource 'content_shell' do
     url "#{BASE_URL}dartium/content_shell-macos-ia32-release.zip"
     version VERSION
-    sha1 '0093ed8968945246961eca5199f2140e3c7dc922'
+    sha1 '4d7514c7d83ccb4a442afb4a71bde7d1c020d688'
   end
 
   depends_on Requires64Bit
