@@ -14,23 +14,6 @@ class Requires64Bit < Requirement
   end
 end
 
-class RequiresNoDart < Requirement
-  def message
-    <<-EOS.undent
-    You must uninstall the 'dart' formula before continuing.
-    This formula includes a superset of the functionality in 'dart'.
-    EOS
-  end
-
-  def satisfied?
-    not Formula.factory('dart').installed?
-  end
-
-  def fatal?
-    true
-  end
-end
-
 class DartEditor < Formula
   ROOT_URL = "https://gsdview.appspot.com/dart-archive/channels"
   release_version = '30188'
@@ -66,7 +49,8 @@ class DartEditor < Formula
   end
 
   depends_on Requires64Bit
-  depends_on RequiresNoDart
+
+  conflicts_with 'dart'
 
   def shim_script target
     <<-EOS.undent
