@@ -1,19 +1,5 @@
 require 'formula'
 
-class Requires64Bit < Requirement
-  def message
-    "Requires 64-bit OS"
-  end
-
-  def satisfied?
-    MacOS.prefer_64_bit?
-  end
-
-  def fatal?
-    true
-  end
-end
-
 class DartEditor < Formula
   ROOT_URL = "https://gsdview.appspot.com/dart-archive/channels"
   release_version = '30188'
@@ -48,8 +34,7 @@ class DartEditor < Formula
     sha1 '4d7514c7d83ccb4a442afb4a71bde7d1c020d688'
   end
 
-  depends_on Requires64Bit
-
+  depends_on :arch => :x86_64
   conflicts_with 'dart'
 
   def shim_script target
