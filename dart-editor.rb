@@ -82,9 +82,8 @@ class DartEditor < Formula
     mktemp do
       (Pathname.pwd+'sample.dart').write <<-EOS.undent
       import 'dart:io';
-      void main() {
-        Options opts = new Options();
-        if(opts.arguments.length == 1 && opts.arguments[0] == 'test message') {
+      void main(List<String> args) {
+        if(args.length == 1 && args[0] == 'test message') {
           exit(0);
         } else {
           exit(1);
