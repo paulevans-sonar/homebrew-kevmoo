@@ -52,18 +52,21 @@ class DartEditor < Formula
 
     items.each do |item|
       name = File.basename item
-      (bin+name).write shim_script(item)
+
+      if name == 'dart'
+        bin.install_symlink item
+      else
+        (bin+name).write shim_script(item)
+      end
     end
 
     if build.with? 'content-shell'
       content_shell_path = prefix+'chromium/content_shell'
       (content_shell_path).install resource('content_shell')
 
-      puts content_shell_path
-
       item = Dir["#{content_shell_path}/Content Shell.app/Contents/MacOS/Content Shell"]
 
-      (bin+'content_shell').write shim_script(item)
+      bin.install_symlink Hash[item, 'content_shell']
 
     end
 
