@@ -2,14 +2,14 @@ require 'formula'
 
 class DartEditor < Formula
   ROOT_URL = "https://gsdview.appspot.com/dart-archive/channels"
-  release_version = '30188'
+  release_version = '30798'
 
   base_url = "#{ROOT_URL}/stable/release/#{release_version}"
 
   homepage 'http://www.dartlang.org/'
   url "#{base_url}/editor/darteditor-macos-x64.zip"
   version release_version
-  sha1 'e6eb7099ea883d2d6790c006dcb575245cf89031'
+  sha1 'ef52263ca336956b91d4dcbd8c6cc95a0e2ca499'
 
   option 'with-content-shell', 'Download and install content_shell -- headless Chromium for testing'
 
@@ -31,7 +31,7 @@ class DartEditor < Formula
   resource 'content_shell' do
     url "#{base_url}/dartium/content_shell-macos-ia32-release.zip"
     version release_version
-    sha1 '4d7514c7d83ccb4a442afb4a71bde7d1c020d688'
+    sha1 '24fdb72440ffdf7419979b551435811789dc40b6'
   end
 
   depends_on :arch => :x86_64
