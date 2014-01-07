@@ -14,17 +14,17 @@ class DartEditor < Formula
   option 'with-content-shell', 'Download and install content_shell -- headless Chromium for testing'
 
   devel do
-    dev_release_version = '31329'
-    dev_base_url = "#{ROOT_URL}/dev/release/#{dev_release_version}"
+    dev_release_version = '31475'
+    dev_base_url = "#{ROOT_URL}/dev/raw/#{dev_release_version}"
 
     url "#{dev_base_url}/editor/darteditor-macos-x64.zip"
     version dev_release_version
-    sha1 '908b9380749f615c5ef6e546585dba70a15aebc3'
+    sha1 'fc014b1fde4cd28dadeae60eb07d8c3b1a8640d0'
 
     resource 'content_shell' do
       url "#{dev_base_url}/dartium/content_shell-macos-ia32-release.zip"
       version dev_release_version
-      sha1 '5032a37d50f3abc5b0d9dcc54b3c6cbc04137640'
+      sha1 'dce9977758fef26bc8558e516860adbe67209868'
     end
   end
 
