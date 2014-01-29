@@ -14,17 +14,17 @@ class DartEditor < Formula
   option 'with-content-shell', 'Download and install content_shell -- headless Chromium for testing'
 
   devel do
-    dev_release_version = '31918'
-    dev_base_url = "#{ROOT_URL}/dev/release/#{dev_release_version}"
+    dev_release_version = '32110'
+    dev_base_url = "#{ROOT_URL}/dev/raw/#{dev_release_version}"
 
     url "#{dev_base_url}/editor/darteditor-macos-x64.zip"
     version dev_release_version
-    sha1 'a5e0a77df34a7061429faf47e79f6f8cee7eaa58'
+    sha1 'b3d1177800932a79422e2928c4a2c1f15abfadf2'
 
     resource 'content_shell' do
       url "#{dev_base_url}/dartium/content_shell-macos-ia32-release.zip"
       version dev_release_version
-      sha1 'db2542b7bd9137ddbb128b762606c9c42be31672'
+      sha1 'd356bd76abe27c226045d7677873c03d2aeab5e2'
     end
   end
 
@@ -70,15 +70,6 @@ class DartEditor < Formula
 
     end
 
-  end
-
-  def caveats; <<-EOS.undent
-    DartEditor.app was installed in:
-      #{installed_prefix}
-
-    To symlink into ~/Applications, you can do:
-      brew linkapps
-    EOS
   end
 
   def test
