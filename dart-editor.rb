@@ -15,11 +15,11 @@ class DartEditor < Formula
 
   devel do
     dev_release_version = '32426'
-    dev_base_url = "#{ROOT_URL}/dev/raw/#{dev_release_version}"
+    dev_base_url = "#{ROOT_URL}/dev/release/#{dev_release_version}"
 
     url "#{dev_base_url}/editor/darteditor-macos-x64.zip"
     version dev_release_version
-    sha1 '6b371f9a5230c7bfd03c45ab4b82cbbdc0dc1742'
+    sha1 '4ca43ba70aedde3351440f81801609afb4c8aec0'
 
     resource 'content_shell' do
       url "#{dev_base_url}/dartium/content_shell-macos-ia32-release.zip"
