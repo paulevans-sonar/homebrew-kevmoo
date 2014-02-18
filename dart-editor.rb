@@ -24,7 +24,7 @@ class DartEditor < Formula
     resource 'content_shell' do
       url "#{dev_base_url}/dartium/content_shell-macos-ia32-release.zip"
       version dev_release_version
-      sha1 '49fea69eade67b504ceadb41a50ff7504d24bd5f'
+      sha1 '7bd7cc08728154b03a7de99c2708729267412658'
     end
   end
 
