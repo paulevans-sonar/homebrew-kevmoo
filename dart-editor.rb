@@ -1,8 +1,17 @@
 require 'formula'
+require 'open-uri'
+require 'json'
 
 class DartEditor < Formula
+  # Manually managed release versions
+  release_version = '1' # '31822'
+  dev_release_version = '2' # '32844'
+
   ROOT_URL = "https://gsdview.appspot.com/dart-archive/channels"
-  release_version = '31822'
+
+  # Versions numbers downloaded from VERSION file of latest
+  dev_release_version = JSON.parse(open('#{ROOT_URL}/dev/release/latest/VERSION').read)["version"]
+  release_version = JSON.parse(open('#{ROOT_URL}/stable/release/latest/VERSION').read)["version"]
 
   base_url = "#{ROOT_URL}/stable/release/#{release_version}"
 
@@ -14,7 +23,6 @@ class DartEditor < Formula
   option 'with-content-shell', 'Download and install content_shell -- headless Chromium for testing'
 
   devel do
-    dev_release_version = '32844'
     dev_base_url = "#{ROOT_URL}/dev/release/#{dev_release_version}"
 
     url "#{dev_base_url}/editor/darteditor-macos-x64.zip"
